@@ -1,0 +1,39 @@
+{
+    "APIKey":"",
+    "API_URL":"",
+    
+
+    "SSH":{
+        "HOST":"",
+        "PORT":"",
+        "USERNAME":"",
+        "PASSWORD":"",
+        "TIMEOUT":""
+    },
+
+    "SHELL":{
+        "ARC_SHELL_CMD":"",
+        "IMPALA_SHELL_CMD":"",
+        "ARCADIA_SHELL_CMD":""
+    },
+
+    "TEST":{
+        "ID":"",
+        "TITLE":"",
+        "DATASET":"",
+        "DATABASE":"",
+        "TABLE":"",
+        "WORKSPACE":"",
+        "CONNECTION":""
+    },
+
+    "PROD":{
+        "ID":"",
+        "TITLE":"",
+        "DATASET":"",
+        "DATABASE":"",
+        "TABLE":"",
+        "WORKSPACE":"",
+        "CONNECTION":""
+    }
+}

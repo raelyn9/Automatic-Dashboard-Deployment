@@ -74,44 +74,44 @@ if __name__ == '__main__':
 	Arc.create_segment()
 
 
-	# # load test & prod config
-	# test_visual = Visual.load_test_config()
-	# prod_visual = Visual.load_prod_config()
+	# load test & prod config
+	test_visual = Visual.load_test_config()
+	prod_visual = Visual.load_prod_config()
 
-	# # take user input
-	# specs = userInput()
+	# take user input
+	specs = userInput()
 
-	# # steps
-	# if specs.export == True:
-	# 	print("*******************Exporting dashboard")
-	# 	Arc.export_visual(test_visual)
+	# steps
+	if specs.export == True:
+		print("*******************Exporting dashboard")
+		Arc.export_visual(test_visual)
 	
 
-	# if specs.copy or specs.impala or specs.arcadia:
-	# 	print("*******************Shell scripting")
-	# 	commands,uploadpathlist,remotepathlist,directory = util.prep_shell_process(specs.copy,specs.impala,specs.arcadia)
-	# 	ssh.executeShellCMDS(commands,uploadpathlist,remotepathlist,directory)
+	if specs.copy or specs.impala or specs.arcadia:
+		print("*******************Shell scripting")
+		commands,uploadpathlist,remotepathlist,directory = util.prep_shell_process(specs.copy,specs.impala,specs.arcadia)
+		ssh.executeShellCMDS(commands,uploadpathlist,remotepathlist,directory)
 
-	# if specs.modify == True:
-	# 	print("*******************Modifying dashboard")
-	# 	if specs.export == True:
-	# 		Arc.modify_visual(test_visual,prod_visual)
-	# 	else:
-	# 		input_str = input("Enter the path to the dashboard's json file that is going to be modified:")
-	# 		if util.checkFile(input_str):
-	# 			Arc.modify_visual(test_visual,prod_visual,input_str)
-	# 		else:
-	# 			print("Path does not exist. Exit")
-	# 			util.script_exit()
+	if specs.modify == True:
+		print("*******************Modifying dashboard")
+		if specs.export == True:
+			Arc.modify_visual(test_visual,prod_visual)
+		else:
+			input_str = input("Enter the path to the dashboard's json file that is going to be modified:")
+			if util.checkFile(input_str):
+				Arc.modify_visual(test_visual,prod_visual,input_str)
+			else:
+				print("Path does not exist. Exit")
+				util.script_exit()
 
-	# if specs.importVisual == True:
-	# 	print("*******************Importing dashboard")
-	# 	if specs.export == True or specs.modify == True:
-	# 		Arc.import_visual(prod_visual)
-	# 	else:
-	# 		input_str = input("Enter the path to the dashboard's json file that is going to be imported:")
-	# 		if util.checkFile(input_str):
-	# 			Arc.import_visual(prod_visual,input_str)
-	# 		else:
-	# 			print("Path does not exist. Exit")
-	# 			util.script_exit()
+	if specs.importVisual == True:
+		print("*******************Importing dashboard")
+		if specs.export == True or specs.modify == True:
+			Arc.import_visual(prod_visual)
+		else:
+			input_str = input("Enter the path to the dashboard's json file that is going to be imported:")
+			if util.checkFile(input_str):
+				Arc.import_visual(prod_visual,input_str)
+			else:
+				print("Path does not exist. Exit")
+				util.script_exit()
